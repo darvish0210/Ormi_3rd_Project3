@@ -37,3 +37,23 @@ ChatGPT를 이용한 챗봇 어플리케이션
 ### 231121 
 
 리포지토리 생성 및 주제 고민
+
+### 231122
+
+https://paullabworkspace.notion.site/ChatGPT-32c56a5acbc14932b92f8f4d43653988
+기본 소스코드 실습 및 분석하기
+
+만난에러
+
+You tried to access openai.Completion, but this is no longer supported in openai>=1.0.0 - see the README at https://github.com/openai/openai-python for the API.
+
+You can run `openai migrate` to automatically upgrade your codebase to use the 1.0.0 interface.
+
+Alternatively, you can pin your installation to the old version, e.g. `pip install openai==0.28`
+
+--------------
+`pip install openai==0.28` 실행시
+
+error: Microsoft Visual C++ 14.0 or greater is required. Get it with "Microsoft C++ Build Tools": https://visualstudio.microsoft.com/visual-cpp-build-tools/
+      [end of output]
+
