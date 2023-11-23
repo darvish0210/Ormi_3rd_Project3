@@ -57,3 +57,11 @@ Alternatively, you can pin your installation to the old version, e.g. `pip insta
 error: Microsoft Visual C++ 14.0 or greater is required. Get it with "Microsoft C++ Build Tools": https://visualstudio.microsoft.com/visual-cpp-build-tools/
       [end of output]
 
+### 231122
+
+error: Microsoft Visual C++ 14.0 or greater is required -> Microsoft C++ Build Tools 에서 'c++을 이용한 데스크톱 개발' 을 설치 후(6gb) openai 0.28 설치 후 해결
+
+해결하고 나니, key 인증에러 발생 : openai.error.AuthenticationError: No API key provided.
+
+key 재발급을 해도 풀리지 않아서 여러가지 시도하던 중, '.env' 파일을 chatbot app 폴더에 넣으니 해결됨 (기존에는 chat_project폴더에 있었음)
+
