@@ -57,7 +57,7 @@ Alternatively, you can pin your installation to the old version, e.g. `pip insta
 error: Microsoft Visual C++ 14.0 or greater is required. Get it with "Microsoft C++ Build Tools": https://visualstudio.microsoft.com/visual-cpp-build-tools/
       [end of output]
 
-### 231122
+### 231123
 
 error: Microsoft Visual C++ 14.0 or greater is required -> Microsoft C++ Build Tools 에서 'c++을 이용한 데스크톱 개발' 을 설치 후(6gb) openai 0.28 설치 후 해결
 
@@ -65,3 +65,9 @@ error: Microsoft Visual C++ 14.0 or greater is required -> Microsoft C++ Build T
 
 key 재발급을 해도 풀리지 않아서 여러가지 시도하던 중, '.env' 파일을 chatbot app 폴더에 넣으니 해결됨 (기존에는 chat_project폴더에 있었음)
 
+### 231124
+
+Swagger UI Test
+
+
+참고 : https://velog.io/@iedcon/AbstractBaseUser%EB%A5%BC-%ED%99%9C%EC%9A%A9%ED%95%9C-Django-%EC%BB%A4%EC%8A%A4%ED%85%80-%EC%9C%A0%EC%A0%80-%EB%AA%A8%EB%8D%B8-%EB%A7%8C%EB%93%A4%EA%B8%B0
