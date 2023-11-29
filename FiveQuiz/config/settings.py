@@ -38,7 +38,7 @@ INSTALLED_APPS = [
     'account',
     'chat',
 ]
-
+CSRF_TRUSTED_ORIGINS = []
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -47,6 +47,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
 ]
 
 ROOT_URLCONF = 'config.urls'
@@ -127,7 +128,7 @@ REST_FRAMEWORK = {
         'rest_framework_simplejwt.authentication.JWTAuthentication',
     ),
     'DEFAULT_THROTTLE_RATES': {
-        'user-chatbot': '5/day',
+        'user-chat': '5/day',
     },
 }
 
@@ -137,3 +138,5 @@ SIMPLE_JWT = {
     'TOKEN_USER_CLASS': 'user.User',
 }
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+CORS_ORIGIN_ALLOW_ALL = True
