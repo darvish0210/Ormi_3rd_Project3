@@ -1,78 +1,134 @@
-# Ormi_3rd_Project3
+# 5늘의 퀴즈
+- 5늘의 퀴즈는 하루 5개의 무작위 퀴즈로 가볍게 상식을 체크하는 사이트입니다.
+
+## 1. 목표와 기능
+
+### 1.1 목표
+- 간단하게 ChatGPT를 이용하여 상식 퀴즈 풀기
+
+### 1.2 기능
+- 회원가입, 로그인, 로그아웃 기능
+- 퀴즈 풀기 기능은 회원만이 가능
+- 퀴즈 풀기 방식은 간단한 입력창에서 진행
+
+## 2. 개발 환경 및 배포 URL
+### 2.1 개발 환경
+
+- <img src="https://img.shields.io/badge/javascript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black">
+- <img src="https://img.shields.io/badge/html5-E34F26?style=for-the-badge&logo=html5&logoColor=white">
+- <img src="https://img.shields.io/badge/css-1572B6?style=for-the-badge&logo=css3&logoColor=white">
+
+- <img src="https://img.shields.io/badge/openai-412991?style=for-the-badge&logo=openai&logoColor=white">
+- <img src="https://img.shields.io/badge/python-3776AB?style=for-the-badge&logo=python&logoColor=white">
+- <img src="https://img.shields.io/badge/django-092E20?style=for-the-badge&logo=django&logoColor=white">
+
+- <img src="https://img.shields.io/badge/Visual Studio Code-007ACC?style=flat-square&logo=Visual Studio Code&logoColor=white"/>
 
 
-https://paullabworkspace.notion.site/ChatGPT-74181b1211794d5cbb6d02197e2d0b11
+### 2.3 URL 구조
+- accounts
 
-ChatGPT를 이용한 챗봇 어플리케이션
+| App       | URL                                        | Views Function    | HTTP                | Note           |
+|-----------|--------------------------------------------|-------------------|---------------------|----------------|
+| accounts  | 'register/'                                | RegisterationView | POST                |회원가입         |
+| accounts  | 'login/'                                   | LoginView         | POST                |로그인           |
 
-- 프로젝트 일정: **11월 21일(화) ~ 11월 30일(목)**
-- **12월 1일 개별 발표**(개인당 10분)
+- chat
 
-# 1. 주제 및 요구사항
-
-[(1차 프로젝트인 HTML/CSS 프로젝트 확장)](https://www.notion.so/eb9761e8baae41ce9f7c405df8e19786?pvs=21)OpenAI의 GPT-3.5 모델을 이용해 챗봇 애플리케이션
-
-- 기존 OpenAI에서 제공하는 API를 직접 만든 서버를 통해 요청하도록 변경합니다.
-- DRF(Django Rest Framework)를 이용하여 서버를 구현합니다.
-- 서버와 프론트를 분리하여 배포합니다.
-- 과제1과 마찬가지로 WBS, ERD 등을 그립니다.
-
-- 모든 구현은 **DRF를 이용하여 구현**합니다.
-- 함수형 뷰 또는 클래스형 뷰 어떤 것을 선택하셔도 상관 없지만(혼합 사용도 좋습니다.) DRF로 구현해야 합니다.
-- 회원가입을 구현합니다.
-- 로그인을 구현합니다.
-- ChatGPT로 요청을 보내주는 API를 Django내에 구현합니다.
-    - (기존JS를 이용한방식) 프론트엔드에서 OpenAI API로 요청을 보냄
-        - 프론트엔드 → OpenAI api 로 요청 → 응답값 프론트엔드에 반영
-    - (변경해야 할 사항) 프론트엔드에서 Django서버를 통해 요청을 보내줍니다.
-        - 프론트엔드 → Django서버 → Django서버에서 OpenAI api 로 요청 → Django서버에서 응답 받고 프론트엔드로 전달 → 응답값 프론트엔드에 반영
-- 챗봇 API는 로그인을 한 유저만 사용가능합니다.
-- 각 user 당 하루 5번만 요청할 수 있도록 구현합니다.
-- 채팅을 데이터베이스에 저장합니다.
-- 저장된 채팅 내역을 조회 할 수 있도록 구현합니다.
-- 저장된 채팅 내역은 로그인한 본인만 볼 수 있습니다.
+| App       | URL                                        | Views Function    | HTTP                | Note           |
+|-----------|--------------------------------------------|-------------------|---------------------|----------------|
+| chat      | 'chat/'                                    | ChatbotView       | GET,POST            | 게시판 목록     |
 
 
+## 3. 프로젝트 구조
 
-### 231121 
+📦FiveQuiz  
+ ┣ 📂accounts  
+ ┃ ┣ 📂__pycache__  
+ ┃ ┣ 📂migrations  
+ ┃ ┗ 📜__init__.py  
+ ┃ ┣ 📜admin.py  
+ ┃ ┣ 📜apps.py  
+ ┃ ┣ 📜models.py  
+ ┃ ┣ 📜serializers.py  
+ ┃ ┣ 📜tests.py  
+ ┃ ┣ 📜urls.py  
+ ┃ ┣ 📜views.py  
+ ┣ 📂chat  
+ ┃ ┣ 📂__pycache__  
+ ┃ ┣ 📂migrations  
+ ┃ ┗ 📜__init__.py  
+ ┃ ┣ 📜admin.py  
+ ┃ ┣ 📜apps.py  
+ ┃ ┣ 📜models.py  
+ ┃ ┣ 📜tests.py  
+ ┃ ┣ 📜throttling.py  
+ ┃ ┣ 📜urls.py  
+ ┃ ┣ 📜views.py  
+ ┣ 📂config  
+ ┃ ┣ 📂__pycache__  
+ ┃ ┣ 📜__init__.py  
+ ┃ ┣ 📜asgi.py  
+ ┃ ┣ 📜settings.py  
+ ┃ ┣ 📜urls.py  
+ ┃ ┗ 📜wsgi.py  
+ ┣ 📂static  
+ ┣ 📜db.sqlite3  
+ ┣ 📜manage.py  
+ ┗ 📜requirements.txt  
+📦FiveQuiz FE  
+ ┣ 📂css  
+ ┃ ┣ 📜login-join.css  
+ ┃ ┗ 📜style.css  
+ ┣ 📂js  
+ ┃ ┣ 📜chat.js  
+ ┃ ┣ 📜join.js  
+ ┃ ┣ 📜login.js  
+ ┃ ┣ 📜status.js  
+ ┣ 📜chat.html  
+ ┣ 📜index.html  
+ ┣ 📜join.html  
+ ┗ 📜login.html  
 
-리포지토리 생성 및 주제 고민
+## 4 개발 일정(WBS)
 
-### 231122
+<img src="ReadmePNG/wbs.png">
 
-https://paullabworkspace.notion.site/ChatGPT-32c56a5acbc14932b92f8f4d43653988
-기본 소스코드 실습 및 분석하기
+## 5. 데이터베이스 모델링(ERD)
 
-만난에러
+<img src="ReadmePNG/erd.png">
 
-You tried to access openai.Completion, but this is no longer supported in openai>=1.0.0 - see the README at https://github.com/openai/openai-python for the API.
+## 6. 와이어프레임 /UI 
 
-You can run `openai migrate` to automatically upgrade your codebase to use the 1.0.0 interface.
+<img src="ReadmePNG/ui.png" width="60%">
 
-Alternatively, you can pin your installation to the old version, e.g. `pip install openai==0.28`
+## 7. 에러와 에러 해결
+- 프론트엔드와 백엔드 연결?
 
---------------
-`pip install openai==0.28` 실행시
+부끄럽지만 이 둘을 연결하는 방식을 전혀 이해하지 못했다. Django가 기본으로 viewing을 제공하기에, 실습중에 했었던 서버단에서 html을 실행하는 방식에 익숙해진 것이 오히려 독이 된 케이스.
+처음엔 Django 서버를 두 개 굴려야하나? 포트번호를 다르게 해서? 아님 외부툴을 사용해서? 같은 여러가지 시도. 검색해도 딱히 나오지 않았다.
+Django서버를 Run하고, VScode Live 서버 익스텐션이나 브라우저를 실행하면 되는 간단한 문제였는데 이것을 몰라서 시간을 많이 소모.
+모르는것은 자꾸 혼자 고민하는 습관이 있는데, 이를 고치도록 노력해야 겠다는 생각.
 
-error: Microsoft Visual C++ 14.0 or greater is required. Get it with "Microsoft C++ Build Tools": https://visualstudio.microsoft.com/visual-cpp-build-tools/
-      [end of output]
+- 유저 커스터마이징
 
-### 231123
+```python
+def _create_user(self, email, password, is_superuser, **extra_fields)
+```
+create_super_user도 이메일과 비밀번호로만 가입되도록 편집하는 과정에서 에러가 나서 검색해봤는데, is_superuser와 is_active 속성이 없어서임을 알게됨.
+이를 단순히 생각해서 함수 선언 자체에 넣어버려서 db에도 굳히 필요없는 속성이 추가되어버림.
+에러가 되지 않는다고 넘어가지 말고, 좀 더 코드를 생각해봐야 하겠다는 깨달음.
 
-error: Microsoft Visual C++ 14.0 or greater is required -> Microsoft C++ Build Tools 에서 'c++을 이용한 데스크톱 개발' 을 설치 후(6gb) openai 0.28 설치 후 해결
+- POST를 요청해도 OPTIONS가 간다?
 
-해결하고 나니, key 인증에러 발생 : openai.error.AuthenticationError: No API key provided.
+GET이나 POST요청을 해도 OPTIONS 요청이 대신 가는 현상.
 
-key 재발급을 해도 풀리지 않아서 여러가지 시도하던 중, '.env' 파일을 chatbot app 폴더에 넣으니 해결됨 (기존에는 chat_project폴더에 있었음)
+Content-Type이 application/json이고 사용자 임의로 헤더를 정의한 경우, preflighted request로 분류되어 POST요청을 전송하기 이전에 OPTIONS 요청을 먼저 보내서 사전검사를 수행하도록 정해져있기 때문: 보안이슈
 
-### 231124
+django-cors-headers 와 settings.py에 CORS_ORIGIN_ALLOW_ALL=True 를 선언 함으로서 해결.
 
-Swagger UI Test
+- Rate limits
 
+```openai.error.RateLimitError: Rate limit reached for text-davinci-003 in organization org-fTXY4VhJ74Es1uwcePdPoZjG on requests per min (RPM): Limit 3, Used 3, Requested 1. Please try again in 20s```
 
-참고 : https://velog.io/@iedcon/AbstractBaseUser%EB%A5%BC-%ED%99%9C%EC%9A%A9%ED%95%9C-Django-%EC%BB%A4%EC%8A%A4%ED%85%80-%EC%9C%A0%EC%A0%80-%EB%AA%A8%EB%8D%B8-%EB%A7%8C%EB%93%A4%EA%B8%B0
-
-
-### 231127
-
-drf-TEST
+리퀘스트가 너무 많이 요청되었다는 에러? wait()함수를 따로 만들어서 20초를 걸어버리면 어느정도 처리되긴 하나 근본적인 해결은 실패.
