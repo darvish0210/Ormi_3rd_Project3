@@ -30,14 +30,14 @@
 
 | App       | URL                                        | Views Function    | HTTP                | Note           |
 |-----------|--------------------------------------------|-------------------|---------------------|----------------|
-| accounts  | 'register/'                                | RegisterationView | POST                |회원가입         |
-| accounts  | 'login/'                                   | LoginView         | POST                |로그인           |
+| accounts  | 'account/register/'                                | RegisterationView | POST                |회원가입         |
+| accounts  | 'account/login/'                                   | LoginView         | POST                |로그인           |
 
 - chat
 
 | App       | URL                                        | Views Function    | HTTP                | Note           |
 |-----------|--------------------------------------------|-------------------|---------------------|----------------|
-| chat      | 'chat/'                                    | ChatbotView       | GET,POST            | 게시판 목록     |
+| chat      | 'chat/'                                    | ChatbotView       | GET,POST            | 채팅 전송 및 내역저장    |
 
 
 ## 3. 프로젝트 구조
