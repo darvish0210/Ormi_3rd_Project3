@@ -30,14 +30,14 @@
 
 | App       | URL                                        | Views Function    | HTTP                | Note           |
 |-----------|--------------------------------------------|-------------------|---------------------|----------------|
-| accounts  | 'register/'                                | RegisterationView | POST                |회원가입         |
-| accounts  | 'login/'                                   | LoginView         | POST                |로그인           |
+| accounts  | 'account/register/'                                | RegisterationView | POST                |회원가입         |
+| accounts  | 'account/login/'                                   | LoginView         | POST                |로그인           |
 
 - chat
 
 | App       | URL                                        | Views Function    | HTTP                | Note           |
 |-----------|--------------------------------------------|-------------------|---------------------|----------------|
-| chat      | 'chat/'                                    | ChatbotView       | GET,POST            | 게시판 목록     |
+| chat      | 'chat/'                                    | ChatbotView       | GET,POST            | 채팅 전송 및 내역저장    |
 
 
 ## 3. 프로젝트 구조
@@ -92,15 +92,15 @@
 
 ## 4 개발 일정(WBS)
 
-<img src="ReadmePNG/wbs.png">
+<img src="./ReadmePNG/WBS.png">
 
 ## 5. 데이터베이스 모델링(ERD)
 
-<img src="ReadmePNG/erd.png">
+<img src="./ReadmePNG/ERD.png">
 
 ## 6. 와이어프레임 /UI 
 
-<img src="ReadmePNG/ui.png" width="60%">
+<img src="./ReadmePNG/ui.png" width="60%">
 
 ## 7. 에러와 에러 해결
 - 프론트엔드와 백엔드 연결?
